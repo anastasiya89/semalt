@@ -35,6 +35,15 @@
 	<p>Пусто</p>
 
 	<h3>5. Напишите запрос, который выберет название мероприятия (events.caption), по которому больше всего заявок</h3>
+	<pre>
+	SELECT e.caption 
+	FROM `events` AS `e` 
+	LEFT JOIN `bids` AS `b` 
+	ON e.id = b.id_event 
+	GROUP BY b.id_event DESC LIMIT 1
+	</pre>
+	<h3>Результат выполнения</h3>
+	<p>Atlas Weekend 2017</p>
     <p>
         <a href="/page" style="padding:20px; text-decoration: none; font-weight: bold">Задание 1 </a>
         <a href="/page3" style="padding:20px; text-decoration: none; font-weight: bold">Задание 3</a>
